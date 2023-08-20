@@ -1,0 +1,30 @@
+[
+    {
+    
+    "title": "AmcericanPancake",
+    "img": "src/assets/americann.png",
+    "price": 150,
+    "info": "3 large amcerican pancakes with nuttela and  "
+  },
+  {
+    
+    "title": "Minipancakes",
+    "img": "src/assets/minii.png",
+    "price": 120,
+    "info": "12 mini amcerican "
+  },
+  {
+    
+    "title": "Waffles",
+    "img": "src/assets/wafflee.png",
+    "price": 100,
+    "info": "Waffles "
+  },
+  {
+    
+    "title": "Creps",
+    "img": "src/assets/crepss.png",
+    "price": 100,
+    "info": "creps "
+  }
+  ]
