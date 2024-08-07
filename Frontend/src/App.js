@@ -3,7 +3,6 @@ import Home from "./pages/Home/Home";
 
 import './App.css'
 import Navbar from "./components/NavBar/Navbar";
-import Pancakes from "./pages/Pancakes/Pancakes";
 function App() {
   
   
