@@ -11,7 +11,6 @@ import mongoose from "mongoose";
             title: { type: String, required: true },
             qty: { type: Number, required: true },
             price: { type: Number, required: true },
-            image: { type: String, required: true },
             product: {
                 type: mongoose.Schema.Types.ObjectId,
                 required: true,
@@ -24,7 +23,7 @@ import mongoose from "mongoose";
         city: { type: String, required: true },
         postalCode: { type: String, required: true },
     }],
-    PaymentMethod:{
+    paymentMethod:{
         type: String,
         required: true
     },
@@ -42,3 +41,4 @@ import mongoose from "mongoose";
     
  });
  const Order = mongoose.model("Order", orderSchema);
+export default Order;

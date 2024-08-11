@@ -8,7 +8,7 @@ function Pancakes() {
   useEffect(() => {
     const fetchPancakes = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/pancakes');
+        const response = await axios.get('http://localhost:8000/api/products');
         setPancakes(response.data);
       } catch (error) {
         console.error('Error fetching pancakes data:', error);
