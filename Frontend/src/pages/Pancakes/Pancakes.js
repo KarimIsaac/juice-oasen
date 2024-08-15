@@ -11,7 +11,7 @@ function Pancakes() {
         const response = await axios.get('http://localhost:8000/api/products');
         setPancakes(response.data);
       } catch (error) {
-        console.error('Error fetching pancakes data:', error);
+        console.error('Error fetching product data:', error);
       }
     };
     fetchPancakes();
@@ -21,7 +21,7 @@ function Pancakes() {
     <div className="pancakes">
       {pancakes.map((pancake) => (
         <div key={pancake.id}>
-          <img src={pancake.img} alt={pancake.title} />
+          <img src={pancake.image} alt={pancake.title} />
           <h2>{pancake.title}</h2>
           <p>Price: ${pancake.price}</p>
           <p>{pancake.info}</p>

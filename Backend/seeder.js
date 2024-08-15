@@ -3,7 +3,7 @@ import colors from 'colors';
 import users from './data/users.js';
 import products  from './data/products.js';
 import User from './models/user.model.js';
-import Product from './models/prodcuts.model.js';
+import Product from './models/products.model.js';
 import Order from './models/order.js';
 import mongoDB from './db/mongoDB.js';
 
