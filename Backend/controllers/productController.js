@@ -9,6 +9,7 @@ const getProducts = errorHandler(async (req, res) => {
 
 const getProductById = errorHandler(
     async (req, res) => {
+        console.log("Product ID:", req.params.id);
         const product = await Product.findById(req.params.id);
         if (product) {
             res.json(product);

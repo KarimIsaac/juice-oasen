@@ -4,8 +4,9 @@ import './Navbar.css'
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Login/Register";
 import Cart from "../../pages/Cart/Cart";
-import Pancakes from "../../pages/Pancakes/Pancakes";
+import Pancakes from "../../pages/Pancakes/Product";
 import Juices from "../../pages/Juice/Juices";
+import ProductScreen from "../../pages/Pancakes/ProductScreen";
 export default function Navbar() {
   return (
     <Router>
@@ -26,7 +27,7 @@ export default function Navbar() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/Pancakes" element={<Pancakes />} />
           <Route path="/Juices" element={<Juices />} />
-
+          <Route path="/product/:id" element={<ProductScreen />} />
         </Routes>
 
     </Router>
