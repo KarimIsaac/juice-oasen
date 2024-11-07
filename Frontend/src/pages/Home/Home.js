@@ -1,5 +1,6 @@
 import "./Home.css"
 import  bgpancake from  "../../assets/bgpancake.png"
+
 export default function Home() {
   return (
     <>
@@ -10,7 +11,7 @@ export default function Home() {
       <img className="bgpancake" src={bgpancake} alt="bgpancake" />
       </div>
     </div>
-    
+  
     </>
   )
 }

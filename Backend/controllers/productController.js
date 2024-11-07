@@ -1,6 +1,7 @@
 import errorHandler from "../middleware/errorHandler.js";
 import Product from "../models/products.model.js";
 
+
 const getProducts = errorHandler(async (req, res) => {
         const products = await Product.find({});
         res.json(products);
@@ -19,5 +20,7 @@ const getProductById = errorHandler(
         }
     }
 )
+
+
 
 export { getProducts, getProductById };

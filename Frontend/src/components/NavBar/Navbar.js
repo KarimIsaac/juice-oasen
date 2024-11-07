@@ -7,6 +7,7 @@ import Cart from "../../pages/Cart/Cart";
 import Pancakes from "../../pages/Pancakes/Product";
 import Juices from "../../pages/Juice/Juices";
 import ProductScreen from "../../pages/Pancakes/ProductScreen";
+import JuiceScreen from "../../pages/Juice/JuiceScreen";
 export default function Navbar() {
   return (
     <Router>
@@ -15,19 +16,19 @@ export default function Navbar() {
           
           <Link to="/juices"> JUICE </Link>
           <Link to="/login"> LOGIN </Link>
-          <Link to="/cart"> CART </Link>
+          
           <Link to="/pancakes"> Pancakes </Link>
-
+          
         </nav>
-
+        <Cart/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Register" element={<Register />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/Pancakes" element={<Pancakes />} />
           <Route path="/Juices" element={<Juices />} />
           <Route path="/product/:id" element={<ProductScreen />} />
+          <Route path="/juice/:id" element={<JuiceScreen />} />
         </Routes>
 
     </Router>

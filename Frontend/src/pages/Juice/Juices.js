@@ -1,35 +1,34 @@
-import React from 'react'
-import axios from 'axios';
-import { useState, useEffect } from "react";
-import "./Juices.css";
-function Juices() {
-  const [Juices, setJuices] = useState([]);
+// src/components/Juice.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useGetJuicesQuery } from '../../slices/juiceApiSlice';
 
-  useEffect(() => {
-    const fetchJuices = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/juices');
-        setJuices(response.data);
-      } catch (error) {
-        console.error('Error fetching pancakes data:', error);
-      }
-    };
-    fetchJuices();
-  }, []);
+function Juice() {
+  const { data: juices, isLoading, error } = useGetJuicesQuery();
 
   return (
-    <div className="pancakes">
-      {Juices.map((Juice) => (
-        <div key={Juice.id}>
-          <img src={Juice.img} alt={Juice.title} />
-          <h2>{Juice.title}</h2>
-          <p>Price: ${Juice.price}</p>
-          <p>{Juice.info}</p>
-          <button>Add</button>
+    <>
+      {isLoading ? (
+        <h2>Loading Juices...</h2>
+      ) : error ? (
+        <div>{error.data?.message || error.error}</div>
+      ) : (
+        <div className="juices">
+          {juices.map((juice) => (
+            <div key={juice.id}>
+              <Link to={`/juice/${juice.id}`}>
+                <img src={juice.image} alt={juice.title} />
+                <h2>{juice.title}</h2>
+              </Link>
+              <p>Price: ${juice.price}</p>
+              <p>{juice.info}</p>
+              <button>Add to Cart</button>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 }
 
-export default Juices;
+export default Juice;

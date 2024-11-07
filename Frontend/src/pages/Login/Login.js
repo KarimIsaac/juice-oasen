@@ -1,26 +1,28 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  
-  
   return (
-    <form >
+    <form>
       <label>
         Email:
         <input
-        type="email" 
-        value={email} 
-        onChange={ (e) => setPassword(e.target.value)} />
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)} // Set email correctly
+        />
       </label>
 
       <label>
         Password:
-        <input type="password" 
-        value={password} 
-         />
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)} // Add onChange for password
+        />
       </label>
 
       <button type="submit">Login</button>
@@ -30,4 +32,3 @@ const Login = () => {
 };
 
 export default Login;
-
