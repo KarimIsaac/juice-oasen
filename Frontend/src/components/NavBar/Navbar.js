@@ -8,7 +8,9 @@ import Pancakes from "../../pages/Pancakes/Product";
 import Juices from "../../pages/Juice/Juices";
 import ProductScreen from "../../pages/Pancakes/ProductScreen";
 import JuiceScreen from "../../pages/Juice/JuiceScreen";
+import { useSelector } from 'react-redux';
 export default function Navbar() {
+  const email = useSelector((state) => state.user.email);
   return (
     <Router>
         <nav>
@@ -18,7 +20,7 @@ export default function Navbar() {
           <Link to="/login"> LOGIN </Link>
           
           <Link to="/pancakes"> Pancakes </Link>
-          
+          {email && <p>Welcome, {email}</p>}
         </nav>
         <Cart/>
         <Routes>
