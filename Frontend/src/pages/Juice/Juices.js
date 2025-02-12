@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGetJuicesQuery } from '../../slices/juiceApiSlice';
-
+import "./Juices.css";
 function Juice() {
   const { data: juices, isLoading, error } = useGetJuicesQuery();
 

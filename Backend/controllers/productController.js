@@ -20,7 +20,4 @@ const getProductById = errorHandler(
         }
     }
 )
-
-
-
 export { getProducts, getProductById };
