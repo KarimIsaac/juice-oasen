@@ -11,9 +11,6 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Perform authentication here (e.g., call an API)
-    
-    // If successful, dispatch the email to Redux
     dispatch(setUserEmail(email));
   };
 
@@ -27,6 +24,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
       </label>
+      
       <label>
         Password:
         <input
