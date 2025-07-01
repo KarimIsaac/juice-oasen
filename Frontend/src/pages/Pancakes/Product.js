@@ -1,10 +1,8 @@
 import "./Pancakes.css";
-
 import { useGetProductsQuery } from "../../slices/productApiSlice";
-
 import { Link } from "react-router-dom";
 
-function Product() {
+function Product({ addToCart }) {
   const { data: products, isLoading, error } = useGetProductsQuery();
 
   return (
@@ -23,7 +21,7 @@ function Product() {
               </Link>
               <p>Price: ${product.price}</p>
               <p>{product.info}</p>
-              <button>Add</button>
+              <button onClick={() => addToCart(product)}>Add</button>
             </div>
           ))}
         </div>
@@ -31,4 +29,5 @@ function Product() {
     </>
   );
 }
+
 export default Product;

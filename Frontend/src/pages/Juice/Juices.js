@@ -1,9 +1,9 @@
-// src/components/Juice.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGetJuicesQuery } from '../../slices/juiceApiSlice';
 import "./Juices.css";
-function Juice() {
+
+function Juice({ addToCart }) {
   const { data: juices, isLoading, error } = useGetJuicesQuery();
 
   return (
@@ -22,7 +22,7 @@ function Juice() {
               </Link>
               <p>Price: ${juice.price}</p>
               <p>{juice.info}</p>
-              <button>Add to Cart</button>
+              <button onClick={() => addToCart(juice)}>Add to Cart</button>
             </div>
           ))}
         </div>
