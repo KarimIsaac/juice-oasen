@@ -1,13 +1,7 @@
 import './Cart.css';
 import React, { useState } from "react";
 
-const Cart = ({ cartItems }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleCart = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Cart = ({ cartItems, isOpen, toggleCart }) => {
   return (
     <div className="cart-container">
       <div className="cart-icon" onClick={toggleCart}>
@@ -22,9 +16,7 @@ const Cart = ({ cartItems }) => {
           ) : (
             <ul>
               {cartItems.map((item, index) => (
-                <li key={index}>
-                  {item.title} - ${item.price}
-                </li>
+                <li key={index}>{item.title}</li>
               ))}
             </ul>
           )}

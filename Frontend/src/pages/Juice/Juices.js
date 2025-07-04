@@ -1,3 +1,4 @@
+// src/pages/Juice/Juices.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGetJuicesQuery } from '../../slices/juiceApiSlice';
@@ -15,14 +16,24 @@ function Juice({ addToCart }) {
       ) : (
         <div className="juices">
           {juices.map((juice) => (
-            <div key={juice.id}>
-              <Link to={`/juice/${juice.id}`}>
+            <div key={juice._id}>
+              <Link to={`/juice/${juice._id}`}>
                 <img src={juice.image} alt={juice.title} />
                 <h2>{juice.title}</h2>
               </Link>
               <p>Price: ${juice.price}</p>
               <p>{juice.info}</p>
-              <button onClick={() => addToCart(juice)}>Add to Cart</button>
+              <button
+                onClick={() =>
+                  addToCart({
+                    id: juice._id, // ✅ use _id here
+                    title: juice.title,
+                    price: juice.price,
+                  })
+                }
+              >
+                Add to Cart
+              </button>
             </div>
           ))}
         </div>
